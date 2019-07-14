@@ -1,4 +1,4 @@
-# th.comp-
+# th.comp~
 
 **Find my Audiovisual projects on http://gumroad.com/tmhglnd**
 
