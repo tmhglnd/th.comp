@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="th.comp~">
+
+	<digest>
+		Mono Compressor with Side-Chain and Softknee
+	</digest>
+
+	<description>
+		A mono Dynamic Range Compressor (DRC) with a softknee, makeup-gain and a side-chain functionality. Left inlet is the signal to be compressed, the right inlet is the signal for the side-chain. All parameters are set with messages on the left inlet.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Timo Hoogland</metadata>
+		<metadata name="tag">thModules</metadata>
+		<metadata name="tag">max</metadata>
+		<metadata name="tag">msp</metadata>
+		<metadata name="tag">compressor</metadata>
+		<metadata name="tag">dynamics</metadata>
+		<metadata name="tag">effect</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>Signal to be compressed</digest>
+			<description>Signal to be compressed</description>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>Signal for Side-chain detection</digest>
+			<description>Signal for Side-chain detection</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>Compressed signal</digest>
+			<description>Compressed signal</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="threshold" optional="1" type="float">
+			<digest>
+				Compression threshold in dB [0, -60] (default = -20)
+			</digest>
+			<description>
+				Compression threshold in dB [0, -60] (default = -20). Threshold is the level above which gain reduction is applied to the input signal.
+			</description>
+		</objarg>
+
+		<objarg name="ratio" optional="1" type="float">
+			<digest>
+				Compression ratio n:1 (default = 4)
+			</digest>
+			<description>
+				Compression ratio n:1 (default = 4). Compression ratio is the input/output ratio for signals that overshoot the operation threshold.
+			</description>
+		</objarg>
+
+		<objarg name="attack" optional="1" type="float">
+			<digest>
+				Attack time for the compressor in ms (default = 5).
+			</digest>
+			<description>
+				Attack time for the compressor in ms (default = 5).
+				Attack time is the time it takes the compressor gain to rise from 10% to 90% of its final value when the input goes above the threshold.
+			</description>
+		</objarg>
+
+		<objarg name="release" optional="1" type="float">
+			<digest>
+				Release time for the compressor in ms (default = 5).
+			</digest>
+			<description>
+				Release time for the compressor in ms (default = 150).
+				Release time is the time it takes the compressor gain to drop from 90% to 10% of its final value when the input goes below the threshold.
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="signal">
+			<arglist>
+				<arg name="signal" optional="0" type="signal" />
+			</arglist>
+			<digest>
+				Function depends on inlet.
+			</digest>
+			<description>
+				Inlet 0: Signal to be compressed<br />
+				<br />
+				Inlet 1: Signal for Side-chain detection
+			</description>
+		</method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+		<attribute name="thresh" get='0' set='1' type='float' size='2'>
+			<digest>
+				Compression threshold in dB
+			</digest>
+			<description>
+				Compression threshold in dB [0, -60] (default = -20).<br />
+				<br /> 
+				Threshold is the level above which gain reduction is applied to the input signal.
+			</description>
+		</attribute>
+
+		<attribute name="ratio" get='0' set='1' type='float' size='2'>
+			<digest>
+				Compression ratio n:1
+			</digest>
+			<description>
+				Compression ratio n:1 [1, 60] (default = 4).<br />
+				<br />
+				Compression ratio is the input/output ratio for signals that overshoot the operation threshold. A ratio of 60 is in general used for limiting.
+			</description>
+		</attribute>
+
+		<attribute name="knee" get='0' set='1' type='float' size='2'>
+			<digest>
+				Softknee width in dB
+			</digest>
+			<description>
+				Softknee width in dB [0, 20] (default = 2).<br />
+				<br />
+				Knee width is the transition area in the compression characteristic.
+			</description>
+		</attribute>
+
+		<attribute name="attack" get='0' set='1' type='float' size='2'>
+			<digest>
+				Attack time for the compressor in ms
+			</digest>
+			<description>
+				Attack time for the compressor in ms [1, -inf] (default = 5).<br />
+				<br />
+				Attack time is the time it takes the compressor gain to rise from 10% to 90% of its final value when the input goes above the threshold.
+			</description>
+		</attribute>
+
+		<attribute name="release" get='0' set='1' type='float' size='2'>
+			<digest>
+				Release time for the compressor in ms
+			</digest>
+			<description>
+				Release time for the compressor in ms [1, -inf] (default = 150).<br />
+				<br />
+				Release time is the time it takes the compressor gain to drop from 90% to 10% of its final value when the input goes below the threshold.
+			</description>
+		</attribute>
+
+		<attribute name="makeup" get='0' set='1' type='float' size='2'>
+			<digest>
+				Make-up gain for signal output in dB
+			</digest>
+			<description>
+				Make-up gain for signal output in dB [-inf, inf] (default = 3). <br />
+				<br />
+				Make-up gain is the volume applied to the compressed signal to achieve an equal loudness compression.
+			</description>
+		</attribute>
+
+		<attribute name="sidechain" get='0' set='1' type='int' size='2'>
+			<digest>
+				Side-chain detection signal enable
+			</digest>
+			<description>
+				Side-chain detection signal enable [0, 1] (default = 0).<br />
+				<br /> 
+				Side-chain is the signal on the right inlet used as detection to compress the signal on the left inlet.
+			</description>
+		</attribute>
+
+		<attribute name="bypass" get='0' set='1' type='int' size='2'>
+			<digest>
+				Bypass the compressor
+			</digest>
+			<description>
+				Bypass the compressor [0, 1] (default = 0).<br />
+				<br />
+				Bypass is used to turn the compressor of and compare the compressed result with the original.
+			</description>
+		</attribute>
+	</attributelist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="omx.comp~"/>
+		<seealso name="omx.peaklim~"/>
+		<seealso name="limi~"/>
+		<seealso name="th.pitchshift~"/>
+		<seealso name="th.yafr~"/>
+		<seealso name="th.yafr.freeze~"/>
+		<seealso name="th.yafr.gliss~"/>
+	</seealsolist>
+</c74object>

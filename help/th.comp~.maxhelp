@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 315.0, 152.0, 588.0, 598.0 ],
+		"rect" : [ 100.0, 100.0, 600.0, 597.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -56,7 +56,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 588.0, 572.0 ],
+						"rect" : [ 0.0, 26.0, 600.0, 571.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -91,7 +91,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 30.0, 83.0, 439.0, 20.0 ],
-									"presentation_linecount" : 2,
 									"text" : "All parameters can be set with a message or with attributes.",
 									"textcolor" : [ 0.32548999786377, 0.345097988843918, 0.372548997402191, 1.0 ]
 								}
@@ -541,7 +540,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 588.0, 572.0 ],
+						"rect" : [ 0.0, 26.0, 600.0, 571.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -570,6 +569,70 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 360.0, 54.0, 54.0, 22.0 ],
+									"text" : "deferlow"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 0,
+									"patching_rect" : [ 195.0, 510.0, 35.0, 22.0 ],
+									"text" : "dac~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"lastchannelcount" : 0,
+									"maxclass" : "live.gain~",
+									"numinlets" : 2,
+									"numoutlets" : 5,
+									"orientation" : 1,
+									"outlettype" : [ "signal", "signal", "", "float", "list" ],
+									"parameter_enable" : 1,
+									"patching_rect" : [ 195.0, 450.0, 135.0, 47.0 ],
+									"saved_attribute_attributes" : 									{
+										"valueof" : 										{
+											"parameter_mmin" : -70.0,
+											"parameter_longname" : "sidechain",
+											"parameter_initial_enable" : 1,
+											"parameter_mmax" : 6.0,
+											"parameter_initial" : [ -70.0 ],
+											"parameter_shortname" : "sidechain",
+											"parameter_type" : 0,
+											"parameter_unitstyle" : 4
+										}
+
+									}
+,
+									"varname" : "sidechain"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 204.0, 332.5, 150.0, 47.0 ],
+									"text" : "the side-chain signal from the drumloop effects the compression of the synth"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"format" : 6,
 									"id" : "obj-44",
@@ -601,7 +664,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 360.0, 44.0, 70.0, 22.0 ],
+									"patching_rect" : [ 360.0, 30.0, 70.0, 22.0 ],
 									"text" : "loadmess 1"
 								}
 
@@ -613,14 +676,14 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "preset", "int", "preset", "int" ],
-									"patching_rect" : [ 360.0, 76.0, 100.0, 40.0 ],
+									"patching_rect" : [ 360.0, 83.0, 100.0, 40.0 ],
 									"preset_data" : [ 										{
 											"number" : 1,
-											"data" : [ 5, "obj-6", "kslider", "int", 38, 5, "obj-5", "live.gain~", "float", -1.196850419044495, 5, "obj-21", "toggle", "int", 1, 5, "obj-26", "flonum", "float", -41.0, 5, "obj-29", "flonum", "float", 21.0, 5, "obj-33", "flonum", "float", 24.0, 5, "obj-30", "flonum", "float", 183.0, 5, "obj-44", "flonum", "float", -7.400000095367432 ]
+											"data" : [ 5, "obj-6", "kslider", "int", 38, 5, "obj-5", "live.gain~", "float", -1.196850419044495, 5, "obj-21", "toggle", "int", 1, 5, "obj-26", "flonum", "float", -41.0, 5, "obj-29", "flonum", "float", 21.0, 5, "obj-33", "flonum", "float", 24.0, 5, "obj-30", "flonum", "float", 183.0, 5, "obj-44", "flonum", "float", -13.0 ]
 										}
 , 										{
 											"number" : 2,
-											"data" : [ 5, "obj-6", "kslider", "int", 38, 5, "obj-5", "live.gain~", "float", -0.507874011993408, 5, "obj-21", "toggle", "int", 1, 5, "obj-26", "flonum", "float", -41.900001525878906, 5, "obj-29", "flonum", "float", 9.0, 5, "obj-33", "flonum", "float", 7.0, 5, "obj-30", "flonum", "float", 60.0, 5, "obj-44", "flonum", "float", -7.400000095367432 ]
+											"data" : [ 5, "obj-6", "kslider", "int", 38, 5, "obj-5", "live.gain~", "float", -0.507874011993408, 5, "obj-21", "toggle", "int", 1, 5, "obj-26", "flonum", "float", -41.900001525878906, 5, "obj-29", "flonum", "float", 9.0, 5, "obj-33", "flonum", "float", 7.0, 5, "obj-30", "flonum", "float", 60.0, 5, "obj-44", "flonum", "float", -12.199999809265137 ]
 										}
  ]
 								}
@@ -671,7 +734,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 465.0, 270.0, 65.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "release $1"
 								}
 
@@ -1186,16 +1248,18 @@
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_mmin" : -70.0,
-											"parameter_longname" : "live.gain~[1]",
+											"parameter_longname" : "synth",
+											"parameter_initial_enable" : 1,
 											"parameter_mmax" : 6.0,
-											"parameter_shortname" : "live.gain~",
+											"parameter_initial" : [ -1.196850419044495 ],
+											"parameter_shortname" : "synth",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 4
 										}
 
 									}
 ,
-									"varname" : "live.gain~"
+									"varname" : "synth"
 								}
 
 							}
@@ -1295,7 +1359,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 30.0, 83.0, 309.0, 33.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Use the right inlet for a side-chain compression signal. Turn the side-chain on with a message or attribute.",
 									"textcolor" : [ 0.32548999786377, 0.345097988843918, 0.372548997402191, 1.0 ]
 								}
@@ -1321,6 +1384,22 @@
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-11", 1 ],
+									"order" : 0,
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-11", 0 ],
+									"order" : 1,
+									"source" : [ "obj-10", 0 ]
 								}
 
 							}
@@ -1368,6 +1447,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
 									"source" : [ "obj-21", 0 ]
 								}
@@ -1404,6 +1490,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 1 ],
+									"order" : 1,
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"order" : 0,
 									"source" : [ "obj-3", 0 ]
 								}
 
@@ -1461,7 +1556,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
 									"hidden" : 1,
-									"midpoints" : [ 423.5, 140.0, 204.5, 140.0 ],
+									"midpoints" : [ 423.5, 150.0, 204.5, 150.0 ],
 									"source" : [ "obj-39", 2 ]
 								}
 
@@ -1475,7 +1570,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-39", 0 ],
+									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-40", 0 ]
 								}
 
@@ -1609,7 +1704,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 588.0, 572.0 ],
+						"rect" : [ 0.0, 26.0, 600.0, 571.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1670,7 +1765,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 315.0, 178.0, 588.0, 572.0 ],
+						"rect" : [ 100.0, 126.0, 600.0, 571.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1700,6 +1795,42 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 241.0, 459.0, 54.0, 22.0 ],
+									"text" : "deferlow"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 241.0, 435.0, 70.0, 22.0 ],
+									"text" : "loadmess 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 80.5, 390.0, 127.0, 33.0 ],
+									"text" : "for all attributes, see tab attributes"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-32",
 									"maxclass" : "meter~",
 									"numinlets" : 1,
@@ -1728,7 +1859,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "preset", "int", "preset", "int" ],
-									"patching_rect" : [ 240.0, 492.0, 100.0, 40.0 ],
+									"patching_rect" : [ 241.0, 492.0, 100.0, 40.0 ],
 									"preset_data" : [ 										{
 											"number" : 1,
 											"data" : [ 5, "obj-5", "live.gain~", "float", -4.399606227874756, 5, "obj-7", "toggle", "int", 1, 5, "obj-11", "live.slider", "float", -26.880340576171875, 5, "obj-17", "live.slider", "float", 7.817938327789307, 5, "obj-19", "live.slider", "float", 7.234662055969238, 5, "obj-23", "live.slider", "float", 45.924983978271484, 5, "obj-28", "toggle", "int", 0 ]
@@ -1776,7 +1907,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 240.0, 375.0, 19.0, 22.0 ],
+									"patching_rect" : [ 240.0, 360.0, 19.0, 22.0 ],
 									"text" : "t l"
 								}
 
@@ -1789,7 +1920,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 465.0, 315.0, 65.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "release $1"
 								}
 
@@ -2058,8 +2188,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 30.0, 375.0, 58.0, 22.0 ],
-									"text" : "th.comp~"
+									"patching_rect" : [ 30.0, 360.0, 177.0, 22.0 ],
+									"text" : "th.comp~ @thresh -10 @ratio 4"
 								}
 
 							}
@@ -2109,7 +2239,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-32", 0 ],
 									"hidden" : 1,
-									"midpoints" : [ 39.5, 424.0, 554.75, 424.0, 554.75, 169.0, 534.0, 169.0 ],
+									"midpoints" : [ 39.5, 428.0, 554.75, 428.0, 554.75, 169.0, 534.0, 169.0 ],
 									"order" : 0,
 									"source" : [ "obj-1", 0 ]
 								}
@@ -2127,6 +2257,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
 									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-29", 0 ],
+									"source" : [ "obj-12", 0 ]
 								}
 
 							}
@@ -2264,6 +2401,13 @@
 								}
 
 							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
  ],
 						"styles" : [ 							{
 								"name" : "AudioStatus_Menu",
@@ -2318,12 +2462,13 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-1::obj-23" : [ "release", "release", 0 ],
+			"obj-3::obj-5" : [ "synth", "synth", 0 ],
 			"obj-1::obj-11" : [ "threshold", "threshold", 0 ],
-			"obj-3::obj-5" : [ "live.gain~[1]", "live.gain~", 0 ],
 			"obj-1::obj-5" : [ "live.gain~", "live.gain~", 0 ],
-			"obj-1::obj-19" : [ "attack", "attack", 0 ],
+			"obj-3::obj-10" : [ "sidechain", "sidechain", 0 ],
+			"obj-1::obj-23" : [ "release", "release", 0 ],
 			"obj-1::obj-17" : [ "ratio", "ratio", 0 ],
+			"obj-1::obj-19" : [ "attack", "attack", 0 ],
 			"parameterbanks" : 			{
 
 			}
