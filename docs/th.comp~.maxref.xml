@@ -43,45 +43,14 @@
 	</outletlist>
 
 	<!--ARGUMENTS-->
-	<objarglist>
+	<!-- <objarglist>
 		<objarg name="threshold" optional="1" type="float">
 			<digest>
-				Compression threshold in dB [0, -60] (default = -20)
 			</digest>
 			<description>
-				Compression threshold in dB [0, -60] (default = -20). Threshold is the level above which gain reduction is applied to the input signal.
 			</description>
 		</objarg>
-
-		<objarg name="ratio" optional="1" type="float">
-			<digest>
-				Compression ratio n:1 (default = 4)
-			</digest>
-			<description>
-				Compression ratio n:1 (default = 4). Compression ratio is the input/output ratio for signals that overshoot the operation threshold.
-			</description>
-		</objarg>
-
-		<objarg name="attack" optional="1" type="float">
-			<digest>
-				Attack time for the compressor in ms (default = 5).
-			</digest>
-			<description>
-				Attack time for the compressor in ms (default = 5).
-				Attack time is the time it takes the compressor gain to rise from 10% to 90% of its final value when the input goes above the threshold.
-			</description>
-		</objarg>
-
-		<objarg name="release" optional="1" type="float">
-			<digest>
-				Release time for the compressor in ms (default = 5).
-			</digest>
-			<description>
-				Release time for the compressor in ms (default = 150).
-				Release time is the time it takes the compressor gain to drop from 90% to 10% of its final value when the input goes below the threshold.
-			</description>
-		</objarg>
-	</objarglist>
+	</objarglist> -->
 
 	<!--MESSAGES-->
 	<methodlist>
