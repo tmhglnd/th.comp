@@ -8,7 +8,7 @@
 
 ## About
 
-A mono Dynamic Range Compressor (DRC) with a softknee, makeup-gain and a side-chain functionality. Left inlet is the signal to be compressed, the right inlet is the signal for the side-chain. All parameters are set with messages on the left inlet.
+A mono Dynamic Range Compressor (DRC) with a softknee, makeup-gain and a Side-chain Detection functionality. Left inlet is the signal to be compressed, the right inlet is the signal for the side-chain. All parameters are set with messages on the left inlet or with attributes in the object. See the helpfile for detailed description.
 
 ## Sources
 
