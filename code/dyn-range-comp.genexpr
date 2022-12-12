@@ -2,7 +2,7 @@
 // dyn-range-comp.genexpr
 // Dynamic Range Compressor Algorithm 
 //
-// Basedn on
+// Based on
 // https://www.mathworks.com/help/audio/ref/compressor-system-object.html
 //
 // http://c4dm.eecs.qmul.ac.uk/audioengineering/compressors/documents/Reiss-Tutorialondynamicrangecompression.pdf
@@ -42,7 +42,7 @@ softknee(x, thresh, ratio, knee) {
 	} else if (x > k2){
 		return ((x - thresh) / ratio) + thresh;
 	} else {
-		return x + ((slope * pow((x - k2), 2)) / (2 * knee));
+		return x + ((slope * pow((x - k1), 2)) / (2 * knee));
 	}
 }
 
